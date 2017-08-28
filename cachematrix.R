@@ -49,9 +49,15 @@ cacheSolve <- function(x, ...)
     message("Getting cache data")
     return(minv)
   }
-  
+  ## get matrix
   m <- x$get()
+  
+  ## Compute inverse matrix
   minv <- solve(m,...)
+  
+  ## Store inverse matrix
   x$setinverse(minv)
+  
+  ## Return inverse matrix
   minv
 }
